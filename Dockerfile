@@ -6,7 +6,6 @@ MAINTAINER masbenx <masbenx@gmail.com>
 RUN apt-get update && apt-get install -y \
       libicu-dev \
       libpq-dev \
-      libmcrypt-dev \
     && rm -r /var/lib/apt/lists/* \
     && docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd \
     && docker-php-ext-install \
@@ -22,7 +21,6 @@ RUN apt-get update && apt-get install -y \
       json \
       ldap \
       mbstring \
-      mcrypt \
       odbc \
       opcache \
       pcntl \
