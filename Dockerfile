@@ -6,35 +6,19 @@ MAINTAINER masbenx <masbenx@gmail.com>
 RUN apt-get update && apt-get install -y \
       libicu-dev \
       libpq-dev \
+      libmcrypt-dev \
     && rm -r /var/lib/apt/lists/* \
     && docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd \
     && docker-php-ext-install \
-      bcmath \
-      bz2 \
-      dba \
-      enchant \
-      gd \
-      gmp \
-      imap \
-      interbase \
       intl \
-      json \
-      ldap \
       mbstring \
-      odbc \
-      opcache \
+      mcrypt \
       pcntl \
       pdo_mysql \
       pdo_pgsql \
       pgsql \
-      pspell \
-      recode \
-      snmp \
-      soap \
-      tidy \
-      xmlrpc \
-      xsl \
-      zip  
+      zip \
+      opcache  
 
 #install redis
 RUN pecl install redis && docker-php-ext-enable redis
